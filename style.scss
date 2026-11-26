@@ -197,29 +197,23 @@ header {
 }
 
 // ============ TIÊU ĐỀ CHUNG (vd: h2 trang chủ) ============
-header p {
-  color: #FFFFFF;
-  font-size: 1.05rem;
-  max-width: 46ch;
-  margin: 0 auto;
-}
-
 h2, .title, [class*="title"] {
   font-family: $font-display;
   font-weight: 700;
   text-align: center;
-  color: #FFFFFF;
+  color: $ink;
   margin-bottom: 24px;
-}
 
-footer, .footer {
-  p {
-    margin: 4px 0;
-    color: #FFFFFF;
-    font-size: 0.88rem;
+  &::after {
+    content: "";
+    display: block;
+    width: 46px;
+    height: 3px;
+    background: $pink;
+    border-radius: 3px;
+    margin: 10px auto 0;
   }
 }
-
 // ============ DANH SÁCH BÀI VIẾT ============
 .post-list-empty {
   text-align: center;
