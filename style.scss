@@ -18,8 +18,8 @@ $line:        rgba(43, 38, 32, 0.16);
 $font-display: 'Baloo 2', sans-serif;
 $font-body: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 
-@mixin party-hat-pattern($opacity: 0.20) {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill='none' stroke='%232B2620' stroke-opacity='#{$opacity}' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolygon points='50,22 24,74 76,74'/%3E%3Ccircle cx='50' cy='16' r='4.5'/%3E%3Cpath d='M33 56l34 6'/%3E%3Cpath d='M39 43l22 4'/%3E%3C/g%3E%3C/svg%3E");
+@mixin party-hat-pattern($opacity: 0.05) {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64'%3E%3Cg fill='%232B2620' fill-opacity='#{$opacity}'%3E%3Cellipse cx='32' cy='40' rx='11' ry='9'/%3E%3Cellipse cx='18' cy='23' rx='4.5' ry='5.5'/%3E%3Cellipse cx='29' cy='16' rx='4.5' ry='5.5'/%3E%3Cellipse cx='41' cy='16' rx='4.5' ry='5.5'/%3E%3Cellipse cx='49' cy='25' rx='4.5' ry='5.5'/%3E%3C/g%3E%3C/svg%3E");
 }
 
 // ============ RESET & BASE ============
@@ -38,18 +38,17 @@ body {
   flex-direction: column;
   color: $ink;
   font-family: $font-body;
-  background-color: rgba(114, 22, 41, 0.3); // đỏ rượu vang transparent 30%
+  background-color: rgba(114, 22, 41, 0.3); // đỏ rượu vang transparent 80%
   background-attachment: fixed;
   position: relative;
   overflow-x: hidden;
 
+ // lớp texture nón sinh nhật phủ nhẹ toàn trang
   &::before {
     content: "";
     position: fixed;
     inset: 0;
-    @include party-hat-pattern(0.20);
-    background-repeat: repeat;
-    background-size: 100px 100px;
+    @include party-hat-pattern(0.045);
     pointer-events: none;
     z-index: 0;
   }
