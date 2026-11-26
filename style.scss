@@ -32,12 +32,16 @@ body {
   margin: 0;
   display: flex;
   flex-direction: column;
-  color: #FFFFFF;
+  color: $ink;
   font-family: $font-body;
-  background: #FFFFFF;
+  background:
+    radial-gradient(60vw 40vh at 12% -10%, rgba($violet, 0.16), transparent 60%),
+    radial-gradient(50vw 35vh at 105% 15%, rgba($pink, 0.14), transparent 60%),
+    $paper;
   background-attachment: fixed;
   position: relative;
   overflow-x: hidden;
+
 
   // Birthday hat pattern overlay
   &::before {
