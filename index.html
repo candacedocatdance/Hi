@@ -1,50 +1,15 @@
----
-layout: default
-title: "Hi, Elaine!"
----
-<h2> Candace is loading.... </h2>
 
-{% assign hi_posts = site.posts | where:"category","hi" %}
-
-{% if hi_posts.size == 0 %}
-
-<div class="post-list-empty">
-    Chưa có bài viết nào về Elaine
-</div>
-
-{% else %}
-
-<ul class="post-list">
-
-{% for post in hi_posts %}
-
-<li class="post-item reveal"
-    onclick="window.location='{{ post.url | relative_url }}';">
-
-    {% if post.image %}
-    <div class="img-container">
-        <img src="{{ post.image | relative_url }}"
-             alt="{{ post.title }}"
-             loading="lazy">
-    </div>
-    {% endif %}
-
-    <h3>
-
-        <a href="{{ post.url | relative_url }}">
-            {{ post.title }}
-        </a>
-
-    </h3>
-
-    <p class="post-date">
-        📅 {{ post.date | date: "%d/%m/%Y" }}
-    </p>
-
-</li>
-
-{% endfor %}
-
-</ul>
-
-{% endif %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="0; url=/Hi/hi/2026/11/26/Elaine.html">
+    <title>Happy Birthday Elaine!</title>
+</head>
+<body>
+    <p>Redirecting...</p>
+    <a href="/Hi/hi/2026/11/26/Elaine.html">
+        Click here to visit the birthday page.
+    </a>
+</body>
+</html>
