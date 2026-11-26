@@ -34,7 +34,7 @@ body {
   flex-direction: column;
   color: #FFFFFF;
   font-family: $font-body;
-  background: rgba(114, 22, 41, 0.6);
+  background: rgba(114, 22, 41, 0.8);
   background-attachment: fixed;
   position: relative;
   overflow-x: hidden;
@@ -469,4 +469,40 @@ footer, .footer {
   }
 
   a { color: $violet; font-weight: 600; text-decoration: none; }
+}
+// Ép chữ màu trắng trên nền đỏ rượu vang
+body,
+main,
+article,
+section,
+.wrapper,
+.content,
+.post,
+.post-content,
+.page-content,
+.markdown-body,
+p,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span,
+div {
+  color: #FFFFFF !important;
+}
+
+// Giữ link dễ phân biệt (trắng sáng + gạch chân nhẹ)
+a,
+a:visited,
+a:hover {
+  color: #FFF3D6 !important;
+}
+
+// Nếu có công thức MathJax (SVG/HTML) thì giữ màu trắng cho rõ
+mjx-container,
+.MathJax {
+  color: #FFFFFF !important;
 }
