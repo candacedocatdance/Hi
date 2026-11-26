@@ -468,3 +468,39 @@ footer, .footer {
 
   a { color: $violet; font-weight: 600; text-decoration: none; }
 }
+
+// Ép toàn bộ văn bản hiển thị rõ màu tối trên nền sáng
+body,
+main,
+article,
+section,
+.wrapper,
+.content,
+.post,
+.post-content,
+.page-content,
+.markdown-body,
+p,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span,
+div,
+label,
+td,
+th,
+blockquote,
+mjx-container,
+.MathJax {
+  color: #2B2620 !important;
+}
+
+a,
+a:visited,
+a:hover {
+  color: #6C5CE7 !important;
+}
