@@ -38,15 +38,11 @@ body {
   flex-direction: column;
   color: $ink;
   font-family: $font-body;
-
-  // Wine red background for page
-  background-color: rgba(114, 22, 41, 0.8);
+  background-color: rgba(114, 22, 41, 0.3); // đỏ rượu vang transparent 30%
   background-attachment: fixed;
-
   position: relative;
   overflow-x: hidden;
 
-  // Birthday hat pattern overlay
   &::before {
     content: "";
     position: fixed;
