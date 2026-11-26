@@ -1,0 +1,63 @@
+---
+layout: default
+---
+
+<script>
+  // Cho widget đàn mèo biết đang xem trang cá nhân của bé nào (so khớp qua url).
+  window.CAT_CORNER_SELF_URL = {{ page.url | relative_url | jsonify }};
+</script>
+
+<a href="{{ '/' | relative_url }}" class="btn-back-home">← Quay lại danh sách</a>
+
+<article class="post-content-area reveal">
+
+  <div class="cat-cv-header">
+    <div class="cat-cv-avatar" id="cat-self-avatar">
+      {% if page.image %}
+        <img src="{{ page.image | relative_url }}" alt="{{ page.title }}">
+      {% else %}
+        <div style="width:100%; height:100%; background:#F3E7D2;"></div>
+      {% endif %}
+    </div>
+    <div class="cat-cv-info-title">
+      <h1>{{ page.title }}</h1>
+      <p class="meta">📋 Hồ sơ lập ngày: {{ page.date | date: "%d/%m/%Y" }}</p>
+    </div>
+  </div>
+{% if page.category == "cat" %}
+  <div class="cat-cv-meta-grid">
+    <div class="meta-item">
+      <span class="label">Chức Vụ</span>
+      <span class="value">{{ page.role | default: "Hoàng Thượng Toàn Thời Gian" }}</span>
+    </div>
+    <div class="meta-item">
+      <span class="label">Tuổi Đời</span>
+      <span class="value">
+        {% if page.age %}
+          {{ page.age }}
+        {% elsif page.birthday %}
+          {% assign birth_ts = page.birthday | date: "%s" | plus: 0 %}
+          {% assign now_ts = "now" | date: "%s" | plus: 0 %}
+          {% assign age_seconds = now_ts | minus: birth_ts %}
+          {% assign age_years = age_seconds | divided_by: 31556952 %}
+          {% if age_years >= 1 %}
+            {{ age_years }} tuổi
+          {% else %}
+            {% assign age_months = age_seconds | divided_by: 2629746 %}
+            {{ age_months }} tháng tuổi
+          {% endif %}
+        {% else %}
+          Đang Cập Nhật
+        {% endif %}
+      </span>
+    </div>
+    <div class="meta-item">
+      <span class="label"> Kỹ Năng</span>
+      <span class="value">{{ page.hobby | default: "Ăn, ngủ & hét vào mặt Sen" }}</span>
+    </div>
+  </div>
+{% endif %}
+  <div class="entry-content">
+    {{ content }}
+  </div>
+</article>
