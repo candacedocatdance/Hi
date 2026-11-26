@@ -18,9 +18,10 @@ $line:        rgba(43, 38, 32, 0.16);
 $font-display: 'Baloo 2', sans-serif;
 $font-body: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 
-@mixin paw-pattern($opacity: 0.05) {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64'%3E%3Cg fill='%232B2620' fill-opacity='#{$opacity}'%3E%3Cellipse cx='32' cy='40' rx='11' ry='9'/%3E%3Cellipse cx='18' cy='23' rx='4.5' ry='5.5'/%3E%3Cellipse cx='29' cy='16' rx='4.5' ry='5.5'/%3E%3Cellipse cx='41' cy='16' rx='4.5' ry='5.5'/%3E%3Cellipse cx='49' cy='25' rx='4.5' ry='5.5'/%3E%3C/g%3E%3C/svg%3E");
+@mixin party-hat-pattern($opacity: 0.20) {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg opacity='#{$opacity}'%3E%3Cg transform='translate(12 12) rotate(-12 15 20)'%3E%3Cpath d='M15 2 L1 37 Q15 43 29 37 Z' fill='%23FFF1D8'/%3E%3Cpath d='M7 23 L23 23 L26 32 L4 32 Z' fill='%23E8A23D'/%3E%3Cellipse cx='15' cy='38' rx='15' ry='3' fill='%23FFF1D8'/%3E%3Ccircle cx='15' cy='1' r='4' fill='%23F5C76B'/%3E%3C/g%3E%3Cg transform='translate(62 55) rotate(15 12 18)'%3E%3Cpath d='M12 2 L0 34 Q12 40 24 34 Z' fill='%23FFF1D8'/%3E%3Cpath d='M5 22 L19 22 L22 30 L2 30 Z' fill='%23E8A23D'/%3E%3Cellipse cx='12' cy='35' rx='13' ry='3' fill='%23FFF1D8'/%3E%3Ccircle cx='12' cy='1' r='4' fill='%23F5C76B'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }
+
 
 // ============ RESET & BASE ============
 * {
@@ -38,25 +39,26 @@ body {
   flex-direction: column;
   color: $ink;
   font-family: $font-body;
-  background:
-    radial-gradient(60vw 40vh at 12% -10%, rgba($violet, 0.16), transparent 60%),
-    radial-gradient(50vw 35vh at 105% 15%, rgba($pink, 0.14), transparent 60%),
-    $paper;
+
+  // Wine red background
+  background: rgba(114, 22, 41, 0.8);
   background-attachment: fixed;
+
   position: relative;
   overflow-x: hidden;
 
-  // lớp texture chân mèo phủ nhẹ toàn trang
+  // Birthday hat pattern overlay
   &::before {
     content: "";
     position: fixed;
     inset: 0;
-    @include paw-pattern(0.045);
+    @include party-hat-pattern(0.20);
+    background-repeat: repeat;
+    background-size: 100px 100px;
     pointer-events: none;
     z-index: 0;
   }
 }
-
 a { color: inherit; }
 
 ::selection {
